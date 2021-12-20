@@ -1,0 +1,47 @@
+<button mat-icon-button class="editUserInfo" (click)="onClickUserInfo()">
+  <mat-icon >person</mat-icon>
+</button>
+<button mat-icon-button class="editLanguage" [matMenuTriggerFor]="menu">
+  <mat-icon>language</mat-icon>
+</button>
+
+      <div class="chat-container">
+        <mat-card class="main-card">
+          <mat-list class="chat-list">
+            <mat-list-item *ngFor="let message of messages" [ngClass]="[(message.action === undefined && message.from.id === user.id)? 'chat-list-item': '']">
+              <input mat-list-avatar class="avatar" *ngIf="message.action === undefined" [style.background-color]="message.from.avatar" value="{{message.from.name[0]}}" disabled maxlength="2">
+              <h4 mat-line *ngIf="message.action === undefined">
+                <b>{{message.from.name}}</b>
+              </h4>
+              <p mat-line *ngIf="message.action === undefined">
+                <span> {{message.content}} </span>
+              </p>
+              <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
+                <span><b>{{message.from.name}}</b><span translate>joined to the conversation.</span></span>
+              </p>
+              <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
+                <span><b>{{message.content.previousUsername}}</b><span translate>is now</span><b>{{message.content.username}}</b> </span>
+              </p>
+            </mat-list-item>
+          </mat-list>
+          <div class="chat-footer-container">
+            <mat-icon>message</mat-icon>
+            <mat-form-field class="chat-input">
+              <input matInput
+                     #inputMessage
+                     maxlength="140"
+                     placeholder="{{'Type your message' | translate}}"
+                     [(ngModel)]="messageContent"
+                     (keyup.enter)="sendMessage(messageContent)">
+              <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
+            </mat-form-field>
+            <button (click)="sendMessage(messageContent)" mat-mini-fab class="send">
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="switchLanguage('en')"><img alt="flag" src="../../../assets/flags/en.png"> English</button>
+            <button mat-menu-item (click)="switchLanguage('tn')"><img alt="flag" src="../../../assets/flags/tn.png"> Taiwan Mandarin</button>
+          </mat-menu>
+        </mat-card>
+      </div>

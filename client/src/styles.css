@@ -1,0 +1,105 @@
+/* Main Color */
+:root {
+    --primary:#8785A2;
+    --bg: #f6f6f6;
+    --text-bg: #F5EEDC;
+    --notification: #7c7c7c;
+    --send: #7CD1B8;
+}
+html, body {
+    overflow: hidden;
+}
+.mat-form-field-infix:focus {
+    /*change color of underline when focused*/
+    border-bottom: 1px solid var(--primary)!important;
+   }
+.mat-drawer-content {
+    overflow: hidden!important;
+}
+.mat-list-avatar {
+    width: 30px!important;
+    height: 30px!important;
+}
+.mat-list-text {
+    font-size: 14px!important;
+}
+.mat-dialog-actions {
+    justify-content: flex-end;
+}
+.mat-toolbar.mat-primary {
+    background: var(--primary)!important;
+}
+.mat-toolbar.mat-primary {
+    background: var(--primary)!important;
+    color: #fff;
+    font-size: 16px;
+}
+.customize {
+    cursor: pointer;
+    padding: 5px 15px;
+    background: var(--text-bg)!important;
+    color: var(--primary)!important;
+    border: 0;
+    font-size: 17px;
+    margin: 20px 0 0 0;
+    border-radius: 25px;
+    width: 100%;
+    font-weight: bold;
+}
+.send {
+    position: absolute!important;
+    bottom: 5px;
+    margin: 0 5px!important;
+    right: -70px;
+    background-color: var(--send)!important;
+}
+.send:hover {
+    opacity: 0.8;
+}
+.customize:hover {
+    opacity: 0.8;
+}
+.main-card {
+    padding: 0!important;
+}
+.app-dialog-user {
+    position: relative;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex,.mat-form-field {
+    width: 100%!important;
+    display: block;
+}
+.mat-dialog-container {
+    position: relative!important;
+    color: #000!important;
+    width: 350px!important;
+    height: 280px!important;
+    background-color: #fff!important;
+}
+.mat-icon {
+    font-size: 19px;
+    width: auto!important;
+    height: auto!important;
+    }
+.mat-toolbar {
+   box-shadow: 0px 2px 19px -12px #242424!important;
+   -webkit-box-shadow: 0px 2px 19px -12px #242424!important;
+   -moz-box-shadow: 0px 2px 19px -12px #242424!important;
+   -o-box-shadow: 0px 2px 19px -12px #242424!important;
+   position: relative;
+   z-index: 2;
+   height: 55px!important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+   background-color: #fff!important;
+}
+.mat-input-element {
+   color: #000!important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex,.mat-form-field-subscript-wrapper {
+   border-radius: 0px!important;
+   padding: 0!important;
+}
+div {
+   font-family: Roboto, "Helvetica Neue", sans-serif!important;
+}

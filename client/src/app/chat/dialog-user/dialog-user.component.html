@@ -1,0 +1,42 @@
+<div class="row">
+<h2 style="margin: 5px auto; text-align: center;">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 35 35" version="1.1">
+  <g id="surface1">
+  <path style=" stroke:none;fill-rule:nonzero;fill:var(--primary);fill-opacity:1;" d="M 17.566406 0.453125 C 8.132812 0.453125 0.488281 8.097656 0.488281 17.53125 C 0.488281 26.964844 8.132812 34.609375 17.566406 34.609375 C 27 34.609375 34.644531 26.964844 34.644531 17.53125 C 34.644531 8.097656 27 0.453125 17.566406 0.453125 Z M 24.886719 11.328125 C 24.886719 11.722656 24.566406 12.039062 24.171875 12.039062 L 20.007812 12.039062 L 20.007812 23.019531 L 24.171875 23.019531 C 24.566406 23.019531 24.886719 23.339844 24.886719 23.734375 L 24.886719 27.1875 C 24.886719 27.582031 24.566406 27.898438 24.171875 27.898438 L 10.980469 27.898438 C 10.585938 27.898438 10.265625 27.582031 10.265625 27.1875 L 10.265625 23.734375 C 10.265625 23.339844 10.585938 23.019531 10.980469 23.019531 L 15.128906 23.019531 L 15.128906 12.039062 L 10.980469 12.039062 C 10.585938 12.039062 10.265625 11.722656 10.265625 11.328125 L 10.265625 7.875 C 10.265625 7.480469 10.585938 7.160156 10.980469 7.160156 L 24.171875 7.160156 C 24.566406 7.160156 24.886719 7.480469 24.886719 7.875 Z M 24.886719 11.328125 "/>
+  <path style=" stroke:none;fill-rule:nonzero;fill:var(--primary);fill-opacity:1;" d="M 15.128906 23.019531 L 20.007812 23.019531 L 20.007812 24.851562 L 15.128906 24.851562 Z M 15.128906 23.019531 "/>
+  <path style=" stroke:none;fill-rule:nonzero;fill:var(--primary);fill-opacity:1;" d="M 15.128906 10.210938 L 20.007812 10.210938 L 20.007812 12.039062 L 15.128906 12.039062 Z M 15.128906 10.210938 "/>
+  </g>
+  </svg>
+</h2>
+<h2 style="text-align: center;font-size: 16px;">{{ 'Dialog Title' | translate:params }}
+  <button mat-icon-button mat-dialog-title [matMenuTriggerFor]="menu" class="button-globe" tabindex="-1">
+    <mat-icon>language</mat-icon>
+  </button>
+</h2>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="switchLanguage('en')"><img alt="flag" src="../../../assets/flags/en.png"> English</button>
+  <button mat-menu-item (click)="switchLanguage('tn')"><img alt="flag" src="../../../assets/flags/tn.png"> Taiwan Mandarin</button>
+</mat-menu>
+</div>
+
+<mat-dialog-content class="dialog-content">
+  <mat-form-field appearance="fill">
+    <mat-label translate>Username</mat-label>
+    <input matInput matInput name="username" placeholder="{{'Username' | translate}}"
+    (keyup.enter)="onSave()" [formControl]="usernameFormControl" required>
+    <mat-error translate>FieldRequired</mat-error>
+    <mat-hint translate>Please type your username</mat-hint>
+  </mat-form-field>
+  <button (click)="onSave()" class="customize"translate >Enter</button>
+</mat-dialog-content>
+
+<mat-dialog-actions *ngIf="params?.typeDialog === 'new-user'" [attr.align]="'end'">
+  <button mat-raised-button color="primary" mat-dialog-close (click)="onSave()" [disabled]="usernameFormControl.hasError('required')">Chat!</button>
+</mat-dialog-actions>
+
+<mat-dialog-actions *ngIf="params?.typeDialog === 'edit-user'" [attr.align]="'end'">
+  <button mat-button mat-dialog-close color="secondary">Close</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="onSave()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,25 @@
+.mat-dialog-content {
+    overflow: hidden;
+    display: block;
+    margin: 0!important;
+    padding: 0 24px;
+    max-height: 65vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.button-globe {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #7c7c7c;
+}
+
+.dialog-title {
+    float:left;
+}
+
+.dialog-content {
+    float: none;
+}
+
