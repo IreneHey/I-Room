@@ -1,8 +1,14 @@
-import express from "express";
+import express, { Application, Request, Response, NextFunction } from "express";
 import cors from "cors";
 import * as http from "http";
 import { Message } from "./model";
 
+export default function createServer() {
+  const app : Application = express();
+  app.get("/",(req: Request, res: Response, next: NextFunction) => {
+    res.send("hello world!")
+  });
+}
 export class ChatServer {
   public static readonly PORT:number = 8080;
   private app: express.Application;
