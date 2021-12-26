@@ -93,6 +93,11 @@ export class ChatComponent implements OnInit, AfterViewInit {
         console.log('connected');
       });
 
+      this.socketService.onEvent(Event.DISCONNECT)
+      .subscribe(() => {
+        console.log('disconnected');
+      });
+
   }
 
   private getRandomId(): number {
