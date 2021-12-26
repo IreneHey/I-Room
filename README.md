@@ -6,9 +6,9 @@ This repository contains server & client side code using `TypeScript` language
 
 # Visuals
 
-![image](https://github.com/IreneHey/I-Room/blob/1eced561a41fed29f6ae375f429fca9ef739f7a6/enter.png)
+![image](https://github.com/IreneHey/I-Room/blob/b798684305397ec27d9cf5be98bb5b27c37757c2/enter.png)
 
-![image](https://github.com/IreneHey/I-Room/blob/1eced561a41fed29f6ae375f429fca9ef739f7a6/chat.png)
+![image](https://github.com/IreneHey/I-Room/blob/b798684305397ec27d9cf5be98bb5b27c37757c2/chat.png)
 
 # Running Server and Client locally
 ## Prerequisites
