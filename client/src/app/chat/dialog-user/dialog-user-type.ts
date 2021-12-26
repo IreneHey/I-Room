@@ -1,4 +1,5 @@
 export enum DialogUserType {
     NEW,
-    EDIT
+    EDIT,
+    LEFT
 }

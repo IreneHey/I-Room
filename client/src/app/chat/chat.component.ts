@@ -93,10 +93,6 @@ export class ChatComponent implements OnInit, AfterViewInit {
         console.log('connected');
       });
 
-    this.socketService.onEvent(Event.DISCONNECT)
-      .subscribe(() => {
-        console.log('disconnected');
-      });
   }
 
   private getRandomId(): number {
@@ -117,8 +113,6 @@ export class ChatComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
-
 
   private openUserPopup(params): void {
     this.dialogRef = this.dialog.open(DialogUserComponent, params);
@@ -172,6 +166,17 @@ export class ChatComponent implements OnInit, AfterViewInit {
       };
     }
 
+    this.socketService.send(message);
+  }
+
+  public sendLogout(params: any, action: Action): void {
+    window.location.reload();
+    let message: Message;
+    action = Action.LEFT
+      message = {
+        from: this.user,
+        action
+      };
     this.socketService.send(message);
   }
 

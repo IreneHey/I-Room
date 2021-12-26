@@ -4,6 +4,9 @@
 <button mat-icon-button class="editLanguage" [matMenuTriggerFor]="menu">
   <mat-icon>language</mat-icon>
 </button>
+<button mat-icon-button class="closeChatRoom" (click)="sendLogout()">
+  <mat-icon>logout</mat-icon>
+</button>
 
       <div class="chat-container">
         <mat-card class="main-card">
@@ -17,7 +20,10 @@
                 <span> {{message.content}} </span>
               </p>
               <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
-                <span><b>{{message.from.name}}</b><span translate>joined to the conversation.</span></span>
+                <span><b>{{message.from.name}}</b><span translate> joined to the conversation.</span></span>
+              </p>
+              <p mat-line *ngIf="message.action === action.LEFT" class="chat-notification">
+                <span><b>{{message.from.name}}</b><span translate> left to the conversation.</span></span>
               </p>
               <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
                 <span><b>{{message.content.previousUsername}}</b><span translate>is now</span><b>{{message.content.username}}</b> </span>

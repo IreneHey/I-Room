@@ -1,6 +1,6 @@
 .editUserInfo {
     position: absolute;
-    right: 2%;
+    right: 55px;
     top: 17px;
     z-index: 1;
     background-color: transparent!important;
@@ -16,7 +16,24 @@
 }
 .editLanguage {
     position: absolute;
-    right: 4%;
+    right: 75px;
+    top: 17px;
+    z-index: 1;
+    background-color: transparent!important;
+    color: #fff!important;
+    border: none;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    z-index: 999;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 15px;
+}
+.closeChatRoom {
+    position: absolute;
+    right: 0px;
     top: 17px;
     z-index: 1;
     background-color: transparent!important;
