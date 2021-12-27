@@ -18,6 +18,8 @@ import { StoreUserService } from './shared/services/store-user.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit, AfterViewInit {
+  public results: any; // Change it private to public
+ public mymessage: any;
   action = Action;
   user: User;
   messages: Message[] = [];
@@ -174,10 +176,10 @@ export class ChatComponent implements OnInit, AfterViewInit {
     this.socketService.send(message);
   }
 
-  public sendLogout(params: any, action: Action): void {
+
+  public sendLogout(action: Action): void {
     window.location.reload();
     let message: Message;
-    action = Action.LEFT
       message = {
         from: this.user,
         action
