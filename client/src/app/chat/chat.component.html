@@ -23,7 +23,7 @@
                 <span><b>{{message.from.name}}</b>&nbsp;<span translate>joined to the conversation.</span></span>
               </p>
               <p mat-line *ngIf="message.action === action.LEFT" class="chat-notification">
-                <span><b>{{message.from.name}}</b>&nbsp;<span translate>left to the conversation.</span></span>
+                <span><b>{{message.from.name}}</b>&nbsp;<span translate>left the conversation.</span></span>
               </p>
               <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
                 <span><b>{{message.content.previousUsername}}</b><span translate>is now</span><b>{{message.content.username}}</b> </span>
